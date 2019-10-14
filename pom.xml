@@ -7,6 +7,27 @@
     <groupId>com.ctillnow</groupId>
     <artifactId>SpringBootTest</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.9.1</version>
+        </dependency>
 
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <configuration>
+                    <!--注意：此处是你电脑安装的protoc.exe的目录-->
+                    <protocExecutable>C:/Users/caiping/Downloads/protoc-3.10.0-win64/bin/protoc.exe</protocExecutable>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <packaging>pom</packaging>
 </project>
