@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qingqing.spider.dao.mybatis.data.CityMapper">
+    <resultMap id="BaseResultMap" type="com.ctillnow.bean.Article">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="digest" property="digest" jdbcType="VARCHAR"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="DATETIME"/>
+        <result column="submit_time" property="submitTime" jdbcType="DATETIME"/>
+        <result column="last_update_time" property="lastUpdateTime" jdbcType="DATETIME"/>
+        <result column="city_id" property="cityId" jdbcType="INTEGER"/>
+        <result column="readable" property="readable" jdbcType="TINYINT"/>
+        <result column="read_count" property="readCount" jdbcType="BIGINT"/>
+        <result column="is_deleted" property="isDeleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+       id,title,content,digest,author,create_time,
+submit_time,last_update_time,city_id,readable,read_count,
+is_deleted
+
+    </sql>
+
+    <insert id="insertArticle">
+
+    </insert>
+
+</mapper>
