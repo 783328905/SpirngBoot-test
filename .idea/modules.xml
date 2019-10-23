@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SpringBootTest.iml" filepath="$PROJECT_DIR$/SpringBootTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spider/spider.iml" filepath="$PROJECT_DIR$/spider/spider.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-api/springboot-api.iml" filepath="$PROJECT_DIR$/springboot-api/springboot-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-util/springboot-util.iml" filepath="$PROJECT_DIR$/springboot-util/springboot-util.iml" />
     </modules>

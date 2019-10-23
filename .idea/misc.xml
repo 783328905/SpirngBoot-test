@@ -44,6 +44,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-api/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-util/pom.xml" />
+        <option value="$PROJECT_DIR$/spider/pom.xml" />
       </list>
     </option>
   </component>

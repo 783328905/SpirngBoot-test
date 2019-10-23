@@ -1,0 +1,28 @@
+syntax = "proto3";
+option java_package = "com.ctillnow.proto";
+option java_outer_classname = "BINlapArticleMessage";
+message BINlpArticleRequest {
+      string time = 1;                   //eg:2019-10-12
+      int32  city_id = 2;                //城市id
+}
+
+message BINlapArticleResponse {
+     BaseResponse response = 1;
+     string city_name = 2;
+     string full_content = 3;               //完整文章
+    repeated BIArticleParagraph paragraph = 4;
+}
+
+message BaseResponse{
+     int32 error_code=1;
+     string error_message=2;
+     string hint_message=3; //4.9.5 提示消息
+}
+
+message BIArticleParagraph {
+     string title = 1;                     //标题
+     string summary = 2;                   //摘要
+     string source = 3;                    //文章来源
+     string bi_article_id = 4;             //BI文章ID
+     string source_article_id = 5;         //原始文章ID
+}

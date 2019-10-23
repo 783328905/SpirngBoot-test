@@ -2,11 +2,13 @@ package com.ctillnow.bean;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
 
 /**
  * Created by caiping on 2019/10/14.
  */
-public class User {
+
+public class User implements Serializable{
     public String name ;
 
     @Min(value = 18,message = "未成年禁止")

@@ -138,7 +138,7 @@ public class Article implements Serializable{
 
     @Override
     public String toString() {
-        return "Article{" +
+        return "com.ctillnow.Article{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +

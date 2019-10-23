@@ -6,87 +6,64 @@ package com.ctillnow.proto;
 public final class PersonEntity {
   private PersonEntity() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+          com.google.protobuf.ExtensionRegistry registry) {
   }
   public interface PersonOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Person)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:Person)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
+     * <code>optional int32 id = 1;</code>
      */
     int getId();
 
     /**
-     * <code>string name = 2;</code>
-     * @return The name.
+     * <code>optional string name = 2;</code>
      */
     java.lang.String getName();
     /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
+     * <code>optional string name = 2;</code>
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+    getNameBytes();
 
     /**
-     * <code>string email = 3;</code>
-     * @return The email.
+     * <code>optional string email = 3;</code>
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
+     * <code>optional string email = 3;</code>
      */
     com.google.protobuf.ByteString
-        getEmailBytes();
+    getEmailBytes();
   }
   /**
    * Protobuf type {@code Person}
    */
   public  static final class Person extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Person)
-      PersonOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessage implements
+          // @@protoc_insertion_point(message_implements:Person)
+          PersonOrBuilder {
     // Use Person.newBuilder() to construct.
-    private Person(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private Person(com.google.protobuf.GeneratedMessage.Builder builder) {
       super(builder);
     }
     private Person() {
+      id_ = 0;
       name_ = "";
       email_ = "";
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Person();
-    }
-
-    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private Person(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -95,60 +72,57 @@ public final class PersonEntity {
             case 0:
               done = true;
               break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               id_ = input.readInt32();
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.google.protobuf.ByteString bs = input.readBytes();
 
-              name_ = s;
+              name_ = bs;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.google.protobuf.ByteString bs = input.readBytes();
 
-              email_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
+              email_ = bs;
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        throw new RuntimeException(e.setUnfinishedMessage(this));
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this));
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return com.ctillnow.proto.PersonEntity.internal_static_Person_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return com.ctillnow.proto.PersonEntity.internal_static_Person_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.ctillnow.proto.PersonEntity.Person.class, com.ctillnow.proto.PersonEntity.Person.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.ctillnow.proto.PersonEntity.Person.class, com.ctillnow.proto.PersonEntity.Person.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
     /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
+     * <code>optional int32 id = 1;</code>
      */
     public int getId() {
       return id_;
@@ -157,32 +131,32 @@ public final class PersonEntity {
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 2;</code>
-     * @return The name.
+     * <code>optional string name = 2;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
         return s;
       }
     }
     /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
+     * <code>optional string name = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
+    getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -193,32 +167,32 @@ public final class PersonEntity {
     public static final int EMAIL_FIELD_NUMBER = 3;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 3;</code>
-     * @return The email.
+     * <code>optional string email = 3;</code>
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        email_ = s;
+        if (bs.isValidUtf8()) {
+          email_ = s;
+        }
         return s;
       }
     }
     /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
+     * <code>optional string email = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getEmailBytes() {
+    getEmailBytes() {
       java.lang.Object ref = email_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         email_ = b;
         return b;
       } else {
@@ -227,7 +201,6 @@ public final class PersonEntity {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -237,151 +210,95 @@ public final class PersonEntity {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       if (id_ != 0) {
         output.writeInt32(1, id_);
       }
       if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        output.writeBytes(2, getNameBytes());
       }
       if (!getEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
+        output.writeBytes(3, getEmailBytes());
       }
-      unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
+                .computeInt32Size(1, id_);
       }
       if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        size += com.google.protobuf.CodedOutputStream
+                .computeBytesSize(2, getNameBytes());
       }
       if (!getEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
+        size += com.google.protobuf.CodedOutputStream
+                .computeBytesSize(3, getEmailBytes());
       }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.ctillnow.proto.PersonEntity.Person)) {
-        return super.equals(obj);
-      }
-      com.ctillnow.proto.PersonEntity.Person other = (com.ctillnow.proto.PersonEntity.Person) obj;
-
-      if (getId()
-          != other.getId()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
+    private static final long serialVersionUID = 0L;
     public static com.ctillnow.proto.PersonEntity.Person parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.ctillnow.proto.PersonEntity.Person parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.ctillnow.proto.PersonEntity.Person parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+            throws java.io.IOException {
+      return PARSER.parseFrom(input);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+            throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return PARSER.parseFrom(input);
     }
     public static com.ctillnow.proto.PersonEntity.Person parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -389,15 +306,14 @@ public final class PersonEntity {
     public static Builder newBuilder(com.ctillnow.proto.PersonEntity.Person prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -405,20 +321,19 @@ public final class PersonEntity {
      * Protobuf type {@code Person}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Person)
-        com.ctillnow.proto.PersonEntity.PersonOrBuilder {
+            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:Person)
+            com.ctillnow.proto.PersonEntity.PersonOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.ctillnow.proto.PersonEntity.internal_static_Person_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return com.ctillnow.proto.PersonEntity.internal_static_Person_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.ctillnow.proto.PersonEntity.Person.class, com.ctillnow.proto.PersonEntity.Person.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.ctillnow.proto.PersonEntity.Person.class, com.ctillnow.proto.PersonEntity.Person.Builder.class);
       }
 
       // Construct using com.ctillnow.proto.PersonEntity.Person.newBuilder()
@@ -427,16 +342,14 @@ public final class PersonEntity {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = 0;
@@ -448,18 +361,15 @@ public final class PersonEntity {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return com.ctillnow.proto.PersonEntity.internal_static_Person_descriptor;
       }
 
-      @java.lang.Override
       public com.ctillnow.proto.PersonEntity.Person getDefaultInstanceForType() {
         return com.ctillnow.proto.PersonEntity.Person.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.ctillnow.proto.PersonEntity.Person build() {
         com.ctillnow.proto.PersonEntity.Person result = buildPartial();
         if (!result.isInitialized()) {
@@ -468,7 +378,6 @@ public final class PersonEntity {
         return result;
       }
 
-      @java.lang.Override
       public com.ctillnow.proto.PersonEntity.Person buildPartial() {
         com.ctillnow.proto.PersonEntity.Person result = new com.ctillnow.proto.PersonEntity.Person(this);
         result.id_ = id_;
@@ -478,39 +387,6 @@ public final class PersonEntity {
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.ctillnow.proto.PersonEntity.Person) {
           return mergeFrom((com.ctillnow.proto.PersonEntity.Person)other);
@@ -533,27 +409,24 @@ public final class PersonEntity {
           email_ = other.email_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         com.ctillnow.proto.PersonEntity.Person parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (com.ctillnow.proto.PersonEntity.Person) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          throw e;
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -564,29 +437,25 @@ public final class PersonEntity {
 
       private int id_ ;
       /**
-       * <code>int32 id = 1;</code>
-       * @return The id.
+       * <code>optional int32 id = 1;</code>
        */
       public int getId() {
         return id_;
       }
       /**
-       * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
+       * <code>optional int32 id = 1;</code>
        */
       public Builder setId(int value) {
-        
+
         id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
+       * <code>optional int32 id = 1;</code>
        */
       public Builder clearId() {
-        
+
         id_ = 0;
         onChanged();
         return this;
@@ -594,32 +463,32 @@ public final class PersonEntity {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 2;</code>
-       * @return The name.
+       * <code>optional string name = 2;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
+       * <code>optional string name = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
+      getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -627,42 +496,36 @@ public final class PersonEntity {
         }
       }
       /**
-       * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
+       * <code>optional string name = 2;</code>
        */
       public Builder setName(
-          java.lang.String value) {
+              java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         name_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 2;</code>
-       * @return This builder for chaining.
+       * <code>optional string name = 2;</code>
        */
       public Builder clearName() {
-        
+
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
+       * <code>optional string name = 2;</code>
        */
       public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+
         name_ = value;
         onChanged();
         return this;
@@ -670,32 +533,32 @@ public final class PersonEntity {
 
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 3;</code>
-       * @return The email.
+       * <code>optional string email = 3;</code>
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          email_ = s;
+          if (bs.isValidUtf8()) {
+            email_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string email = 3;</code>
-       * @return The bytes for email.
+       * <code>optional string email = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getEmailBytes() {
+      getEmailBytes() {
         java.lang.Object ref = email_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           email_ = b;
           return b;
         } else {
@@ -703,56 +566,48 @@ public final class PersonEntity {
         }
       }
       /**
-       * <code>string email = 3;</code>
-       * @param value The email to set.
-       * @return This builder for chaining.
+       * <code>optional string email = 3;</code>
        */
       public Builder setEmail(
-          java.lang.String value) {
+              java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         email_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string email = 3;</code>
-       * @return This builder for chaining.
+       * <code>optional string email = 3;</code>
        */
       public Builder clearEmail() {
-        
+
         email_ = getDefaultInstance().getEmail();
         onChanged();
         return this;
       }
       /**
-       * <code>string email = 3;</code>
-       * @param value The bytes for email to set.
-       * @return This builder for chaining.
+       * <code>optional string email = 3;</code>
        */
       public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+
         email_ = value;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
       }
 
 
@@ -769,61 +624,72 @@ public final class PersonEntity {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Person>
-        PARSER = new com.google.protobuf.AbstractParser<Person>() {
-      @java.lang.Override
-      public Person parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Person(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Person> parser() {
-      return PARSER;
-    }
+    public static final com.google.protobuf.Parser<Person> PARSER =
+            new com.google.protobuf.AbstractParser<Person>() {
+              public Person parsePartialFrom(
+                      com.google.protobuf.CodedInputStream input,
+                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                      throws com.google.protobuf.InvalidProtocolBufferException {
+                try {
+                  return new Person(input, extensionRegistry);
+                } catch (RuntimeException e) {
+                  if (e.getCause() instanceof
+                          com.google.protobuf.InvalidProtocolBufferException) {
+                    throw (com.google.protobuf.InvalidProtocolBufferException)
+                            e.getCause();
+                  }
+                  throw e;
+                }
+              }
+            };
 
     @java.lang.Override
     public com.google.protobuf.Parser<Person> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
     public com.ctillnow.proto.PersonEntity.Person getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Person_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Person_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+          internal_static_Person_descriptor;
+  private static
+  com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internal_static_Person_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+  private static com.google.protobuf.Descriptors.FileDescriptor
+          descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014person.proto\"1\n\006Person\022\n\n\002id\030\001 \001(\005\022\014\n\004" +
-      "name\030\002 \001(\t\022\r\n\005email\030\003 \001(\tB\037\n\017com.lhyt.en" +
-      "tityB\014PersonEntityb\006proto3"
+            "\n\014person.proto\"1\n\006Person\022\n\n\002id\030\001 \001(\005\022\014\n\004" +
+                    "name\030\002 \001(\t\022\r\n\005email\030\003 \001(\tB\"\n\022com.ctillno" +
+                    "w.protoB\014PersonEntityb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+            new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+              public com.google.protobuf.ExtensionRegistry assignDescriptors(
+                      com.google.protobuf.Descriptors.FileDescriptor root) {
+                descriptor = root;
+                return null;
+              }
+            };
+    com.google.protobuf.Descriptors.FileDescriptor
+            .internalBuildGeneratedFileFrom(descriptorData,
+                    new com.google.protobuf.Descriptors.FileDescriptor[] {
+                    }, assigner);
     internal_static_Person_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+            getDescriptor().getMessageTypes().get(0);
     internal_static_Person_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Person_descriptor,
-        new java.lang.String[] { "Id", "Name", "Email", });
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_Person_descriptor,
+            new java.lang.String[] { "Id", "Name", "Email", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

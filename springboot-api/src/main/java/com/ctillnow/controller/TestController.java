@@ -3,11 +3,15 @@ package com.ctillnow.controller;
 
 import com.ctillnow.bean.Article;
 import com.ctillnow.bean.User;
+import com.ctillnow.component.AsyncTask;
+
 import com.ctillnow.myannotation.PrintLog;
 import com.ctillnow.service.ArticleService;
 import com.ctillnow.util.TimeUtil;
 import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,6 +37,11 @@ import java.util.Date;
 public class TestController {
     @Autowired
     ArticleService articleService;
+    @Autowired
+    AsyncTask asyncTask;
+
+    @Autowired
+    RedisTemplate redisTemplate;
 
 
     @RequestMapping("date")
@@ -84,6 +93,42 @@ public class TestController {
     }
 
 
+    @RequestMapping("/async")
+    @ResponseBody
+    public String doTask() throws InterruptedException {
+        long start  = System.currentTimeMillis();
+        asyncTask.task();
+        asyncTask.task1();
+        asyncTask.task2();
+        long end = System.currentTimeMillis();
+        return "任务总耗时"+(end-start)+ "ms";
+
+
+    }
+
+//    @PostMapping("/sendUser")
+//    @ResponseBody
+//    public String sendUser(@RequestBody User user){
+//
+//        sender.sendDirectQueue(user);
+//        return "user信息发送成功";
+//    }
+
+    @GetMapping("/redis")
+    @ResponseBody
+    public String testRedis( ){
+
+
+
+        return (String)redisTemplate.opsForValue().get("article");
+
+
+    }
+    @RequestMapping("/proto")
+
+    public String testProto(){
+        return "";
+    }
 
 
 }

@@ -1,17 +1,22 @@
 package com.ctillnow.test;
 
 import com.ctillnow.proto.PersonEntity;
+import com.google.protobuf.Descriptors;
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.jayway.jsonpath.internal.JsonFormatter;
-import org.springframework.boot.test.json.JsonContent;
 
+
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
  * Created by caiping on 2019/10/12.
  */
 public class ProtoTest {
-    public static void main(String[] args) {
+
+
+    public static void main(String[] args) throws IOException {
+
+
         PersonEntity.Person.Builder builder=  PersonEntity.Person.newBuilder();
         builder.setId(1);
         builder.setName("张三");
@@ -32,6 +37,9 @@ public class ProtoTest {
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
         }
+
+
+
 
 
     }

@@ -1,7 +1,6 @@
 syntax = "proto3";
-option java_package = "com.lhyt.entity";
+option java_package = "com.ctillnow.proto";
 option java_outer_classname = "PersonEntity";
-
 message Person {
     int32 id = 1;
     string name = 2;
