@@ -16,85 +16,273 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<metrics.version>3.2.2</metrics.version>
 	</properties>
 
 	<dependencies>
+		<!--metric start-->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.data</groupId>-->
-			<!--<artifactId>spring-data-jpa</artifactId>-->
-		<!--</dependency>-->
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.3.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.2.12</version>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>3.2.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.0.Final</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.3.2</version>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-servlets</artifactId>
+			<version>3.2.2</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>metrics-core</artifactId>
+					<groupId>io.dropwizard.metrics</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>us.codecraft</groupId>
-			<artifactId>webmagic-core</artifactId>
-			<version>0.5.3</version>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-log4j2</artifactId>
+			<version>3.2.2</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>metrics-core</artifactId>
+					<groupId>io.dropwizard.metrics</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>us.codecraft</groupId>
-			<artifactId>webmagic-extension</artifactId>
-			<version>0.5.3</version>
+			<groupId>com.ryantenney.metrics</groupId>
+			<artifactId>metrics-spring</artifactId>
+			<version>3.1.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>metrics-core</artifactId>
+					<groupId>io.dropwizard.metrics</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>metrics-healthchecks</artifactId>
+					<groupId>io.dropwizard.metrics</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
+		<!--metric end-->
+		<dependency>
+			<groupId>com.qingqing</groupId>
+			<artifactId>spider-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>api-common</artifactId>
+					<groupId>com.qingqing.api</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.qingqing</groupId>
+			<artifactId>qingqing-starter</artifactId>
+			<version>0.0.12-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.qingqing.api</groupId>
+					<artifactId>api-common</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.qingqing.api</groupId>
+					<artifactId>spring-web-util</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-rabbit</artifactId>
+					<groupId>org.springframework.amqp</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
+					<artifactId>junit</artifactId>
+					<groupId>junit</groupId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+
+		<!-- 引入log4j2依赖 start-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId></artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-web</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
+		<!-- 引入log4j2依赖  end-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-boot-starter-logging</artifactId>
+					<groupId>org.springframework.boot</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.baidu.disconf</groupId>
+			<artifactId>disconf-client</artifactId>
+			<version>2.6.35</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>aspectjtools</artifactId>
+					<groupId>org.aspectj</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>zookeeper</artifactId>
+					<groupId>org.apache.zookeeper</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.6</version>
+		</dependency>
+
+		<!--metric start-->
+		<dependency>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-log4j2</artifactId>
+			<version>${metrics.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>metrics-core</artifactId>
+					<groupId>io.dropwizard.metrics</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.ryantenney.metrics</groupId>
+			<artifactId>metrics-spring</artifactId>
+			<version>3.1.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>metrics-core</artifactId>
+					<groupId>io.dropwizard.metrics</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>metrics-healthchecks</artifactId>
+					<groupId>io.dropwizard.metrics</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--metric end-->
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<!--<scope>provided</scope>-->
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>us.codecraft</groupId>
+			<artifactId>webmagic-core</artifactId>
+			<version>0.7.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>fastjson</artifactId>
+					<groupId>com.alibaba</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-lang3</artifactId>
+					<groupId>org.apache.commons</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-io</artifactId>
+					<groupId>commons-io</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>us.codecraft</groupId>
+			<artifactId>webmagic-extension</artifactId>
+			<version>0.7.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.jcip</groupId>
+			<artifactId>jcip-annotations</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 

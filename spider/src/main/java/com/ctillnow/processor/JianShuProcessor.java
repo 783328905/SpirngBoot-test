@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.pipeline.ConsolePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Selectable;
 
@@ -26,11 +27,13 @@ public class JianShuProcessor implements PageProcessor {
 
     @Override
     public void process(Page page) {
+        System.out.println("----------"+"爬虫开始");
         if (page.getUrl().regex(list).match()) {
             List<Selectable> list=page.getHtml().xpath("//ul[@class='article-list thumbnails']/li").nodes();
             for (Selectable s : list) {
                 String title=s.xpath("//div/h4/a/text()").toString();
                 String link=s.xpath("//div/h4").links().toString();
+                System.out.println(title+","+link);
                 News news=new News();
                 news.setTitle(title);
                 news.setInfo(title);
@@ -52,6 +55,7 @@ public class JianShuProcessor implements PageProcessor {
         spider.addPipeline(new NewsPipeline());
         spider.thread(5);
         spider.setExitWhenComplete(true);
+        spider.addPipeline(new ConsolePipeline());
         spider.start();
     }
 }
