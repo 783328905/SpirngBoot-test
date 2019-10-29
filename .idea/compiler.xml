@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="appium-learn" />
         <module name="spider" />
         <module name="springboot-api" />
         <module name="springboot-util" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="appium-learn" target="1.8" />
       <module name="spider" target="1.8" />
       <module name="springboot-api" target="7" />
       <module name="springboot-util" target="7" />
