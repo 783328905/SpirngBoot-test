@@ -1,12 +1,12 @@
 package com.ctillnow.appium;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
+import org.openqa.selenium.internal.Locatable;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.ThreadFactory;
 
 
 public class CalculatorTest {
@@ -16,7 +16,7 @@ public class CalculatorTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "HKL4ZEL3");
         //capabilities.setCapability("automationName", "Appium");
-        //capabilities.setCapability("automationName", "uiautomator2");
+        capabilities.setCapability("automationName", "uiautomator2");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "8.1");
         capabilities.setCapability("sessionOverride", true);
@@ -25,8 +25,9 @@ public class CalculatorTest {
 
 
         AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        Thread.sleep(3000);
 
-        driver.findElementById("com.zui.calculator:id/digit_1").click();
+        //driver.findElementById("com.zui.calculator:id/digit_1").click();
         driver.findElementByXPath("//android.widget.Button[contains(@text,'7')]").click();
         driver.findElementByXPath("//android.widget.Button[contains(@text,'+')]").click();
         driver.findElementByXPath("//android.widget.Button[contains(@text,'5')]").click();
@@ -48,5 +49,6 @@ public class CalculatorTest {
 
         driver.quit();
     }
+
 
 }
